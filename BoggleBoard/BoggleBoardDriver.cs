@@ -29,7 +29,7 @@ namespace Sterms
             boggleChars.Add('e'); boggleChars.Add('t'); boggleChars.Add('r'); boggleChars.Add('n');
             boggleChars.Add('i'); boggleChars.Add('u'); boggleChars.Add('s'); boggleChars.Add('r');
 
-            List<string> words3 = BoggleBoard.GetAllBoggleWords(4, boggleChars);
+            List<string> words3 = BoggleBoard.GetAllBoggleWords(4, boggleChars, "usa.txt");
 
 
             ////Uncomment to use live game.
