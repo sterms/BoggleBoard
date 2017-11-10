@@ -15,6 +15,7 @@ namespace Sterms
     {
         private TrieNode m_Root;
         public int Size { get; private set; } = 0;
+        public string FileSource { get; private set; }
 
         public Trie(string filePath, int minimumWordLength = 3)
         {
@@ -31,13 +32,14 @@ namespace Sterms
         }
 
         private void LoadTrie(string filePath, int minimumWordLength)
-        {
+        {            
             string DictionaryIO = File.ReadAllText(filePath);
             string[] DictionaryWords = DictionaryIO.Split('\r', ' ', '\n');
             for(int i = 0; i < DictionaryWords.Length; i++)
             {
                 if (DictionaryWords[i].Length >= minimumWordLength) Insert(DictionaryWords[i]);
             }
+            FileSource = filePath;
         }
 
         public void Insert(string value)

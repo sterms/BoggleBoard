@@ -122,7 +122,9 @@ namespace Sterms
         {
             m_Board = new char[boardSize, boardSize];
             if (letterCount != boardSize * boardSize) throw new ArgumentException("Incorrect sized board source.");
-            if (s_Dictionary == null || s_Dictionary.Size == 0) s_Dictionary = new Trie(dictionaryFilePath, 4);
+            if (s_Dictionary == null 
+                || s_Dictionary.Size == 0 
+                || (s_Dictionary.FileSource != dictionaryFilePath)) s_Dictionary = new Trie(dictionaryFilePath, 4);
         }
 
         #endregion
